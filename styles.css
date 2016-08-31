@@ -13,17 +13,32 @@ h1{
 }
 .card{
   width: 150px;
-  height: 200px;
+  min-height: 200px;
   border: 1px solid black;
   display: inline-block;
 }
-.deck{
+/*.deck{
   width: 800px;
   min-height: 800px;
   border: 1px solid black;
   display: inline-block;
   margin-left: 305px;
+}*/
+#discardPile{
+  width: 380px;
+  min-height: 380px;
+  border: 1px solid black;
+  margin-left: 350px;
+  padding-bottom: 10px;
 }
+/*#drawPile{
+  width: 380px;
+  height: 380px;
+  border: 1px solid black;
+  margin-left: 750px;
+  margin-top: -383px;
+  padding-bottom: 10px;
+}*/
 .red{
   background-color: red;
 }
