@@ -13,6 +13,26 @@ function logger(){
   console.log("Player 2 hand:", game.player2.hand);
   console.log("Discard Pile:", game.discardPile);
 }
+
+// function hider(){
+// $('p .instructions').hide();
+//
+// $('.instructions').on('click', function(){
+//   $('p').show(2000);
+// });
+//
+// $('p .rules').hide();
+//
+// $('.rules').on('click', function(){
+//   $('p').show(2000);
+// })
+//
+// $('p .themes').hide();
+//
+// $('.themes').on('click', function(){
+//   $('p').show(2000);
+// });
+// };
 //EVENT LISTENERS:
 //Event Listener for when a player clicks the Start New Game Button
 // function startGame(){
@@ -57,7 +77,7 @@ function logger(){
 function switchTurns(){
   if(game.currentPlayer == game.player1){
     game.currentPlayer = game.player2;
-    alert ("Player 2's Turn")
+    alert("Player 2's Turn")
   }
   else {
     game.currentPlayer = game.player1;
@@ -158,15 +178,83 @@ function populateCards() {
   })
 
   $('body').on('click', '.discard', function(card) {
-      $('#discardPile').append();
-       $(this).parent().remove();
-       switchTurns();
+    // the index of the card in the hand that was clicked:
+    var index = $(this).parent().index()
+
+    // go into the current player's hand, take out the discarded card...
+    var cardToDiscard = game.currentPlayer.hand[index]
+    var topOfDiscardPile = game.discardPile[game.discardPile.length - 1]
+
+
+    console.log(cardToDiscard.color, cardToDiscard.info)
+
+    if(cardToDiscard.color == topOfDiscardPile.color || cardToDiscard.info == topOfDiscardPile.info) {
+      console.log("Ok to discard!")
+
+      // put that discarded card into discardPile array
+      game.discardPile.push(game.currentPlayer.hand.splice(index, 1)[0])
+
+
+
+      // -------
+      // removes the card div from the DOM
+
+      $('#discardPile').html($(this).parent())
+    } else {
+      console.log("Womp, color or number do not match...")
+      switchTurns()
+    }
+
+
+
+
+
+
+
+
+
+    //check to make sure the move is valid
+
+
+    // empty discard pile
+    // append new card
+      // $('#discardPile').html($(this).parent());
+      // console.log($(this).parent().parent().children().length)
+
+      // console.log($(this).parent());
+      //  $(this).parent().remove();
+
+      // check for the winner
+      // if(checkForWinner()){
+      //   alert ("FROZEN!! You are the winner!");
+      // } else {
+      //   switchTurns();
+      // }
   });
 
-  player1.whoIsTheWinner();
-  player2.whoIsTheWinner();
+  // player1.whoIsTheWinner();
+  // player2.whoIsTheWinner();
 
 }
+
+// function checkForWinner()
+// if current player's hand is == 0
+//  return true
+// otherwise
+//  return false
+
+function checkForWinner(){
+  if(game.currentPlayer.hand == 0){
+    return true;
+  }
+  else{
+    return false;
+  };
+};
+
+$('.deck').on('click', function(){
+  game.currentPlayer.hand.append(game.deck.push(game.deck.pop()));
+})
 // function turn(){
 //   $('body').on('click', '.discard', function() {
 //       $('#discardPile').append(card);
@@ -242,22 +330,22 @@ var $resetBtn = $('#resetBtn');
 //   // game.deck.pop();
 // });
 
-function Winner(player1, player2){
-  this.player1 = player1;
-  this.player2 = player2;
-}
-
-Winner.prototype.whoIsTheWinner = function(){
-  if(this.player1){
-    console.log("Player 1 Wins");
-  }
-  else{
-    console.log("Player 2 Wins");
-  };
-};
-
-var player1 = new Winner(true, false);
-var player2 = new Winner(false, true);
+// function Winner(player1, player2){
+//   this.player1 = player1;
+//   this.player2 = player2;
+// }
+//
+// Winner.prototype.whoIsTheWinner = function(){
+//   if(this.player1){
+//     console.log("Player 1 Wins");
+//   }
+//   else{
+//     console.log("Player 2 Wins");
+//   };
+// };
+//
+// var player1 = new Winner(true, false);
+// var player2 = new Winner(false, true);
 
 // player1.whoIsTheWinner();
 // player2.whoIsTheWinner();

@@ -2,20 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
+
     <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
     <title>FrozUNO</title>
   </head>
   <body>
+
     <h1>FrozUNO</h1>
   <nav>
     <h2 id="instructions">Instructions</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <h2 id="rules">Rules</h2>
-    <h2 id="themes">Themes</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </nav>
+  <h3 id="p1">Player 1</h3>
+    <div id="statsP1" class="playerStats"></div>
+  <h3 id="p2">Player 2</h3>
+    <div id="statsP2" class="playerStats"></div>
 
-    <div href src="#" id="statsP1" class="playerStats">Player 1 7 Cards Left</div>
-    <div href src="#" id="statsP2" class="playerStats">Player 2 5 Cards Left</div>
-
+    <button id=deck>Get a card!</button>
 
     <div id="discardPile"></div>
     <!-- <div id="drawPile"></div> -->
@@ -272,8 +280,8 @@
       </div> -->
 
 
-    <button id="resetBtn" class="button">Let it go! Let it go! Can't hold it back anymore! Start New Game!</button>
-    <button id=endBtn class="button">End Game</button>
+    <button id="resetBtn" class="button">Let it go! Let it go! Can't hold it back anymore! Reset Game!</button>
+
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
   </body>
