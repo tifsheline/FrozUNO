@@ -1,8 +1,8 @@
 //FUNCTION DECLARATIONS:
 // drawPile and discardPile should be arrays, not objects with a hand array.
 var game = {
-  player1: {hand:[]},
-  player2: {hand:[]},
+  player1: {name: "player1", hand:[]},
+  player2: {name: "player2", hand:[]},
   discardPile: []
 }
 
@@ -77,11 +77,11 @@ function logger(){
 function switchTurns(){
   if(game.currentPlayer == game.player1){
     game.currentPlayer = game.player2;
-    alert("Player 2's Turn")
+    console.log("Player 2's Turn")
   }
   else {
     game.currentPlayer = game.player1;
-    alert("Player 1's Turn")
+    console.log("Player 1's Turn")
   }
 }
 
@@ -137,7 +137,7 @@ function newGame(){
   // game.deck.sort(function(a, b){
   //   return 0.5 - Math.random();
   // });
-  shuffle(game.deck)
+  shuffle(game.deck);
 
 for (var i = 0; i < 7; i++) {
   game.player1.hand.push(game.deck.pop());
@@ -162,11 +162,11 @@ populateCards();
 
 function populateCards() {
   game.player1.hand.forEach(function(card){
-    $('#player1-hand').append("<div class='card " + card.color + "'>" + card.info + card.quote + "<button class='discard'>X</button></div>")
+    $('#player1-hand').append("<div class='card " + card.color + "'>" + "<button class='discard'>X</button><br>" + card.info + " " + card.quote + " " + " " + "</div")
   })
 
   game.player2.hand.forEach(function(card) {
-    $('#player2-hand').append("<div class='card " + card.color + "'>" + card.info + card.quote + "<button class='discard'>X</button></div>")
+    $('#player2-hand').append("<div class='card " + card.color + "'>" + "<button class='discard'>X</button><br>" + card.info + " " + card.quote + " " + " " + " </div>")
   })
 
   // game.drawPile.forEach(function(card) {
@@ -174,44 +174,58 @@ function populateCards() {
   // })
 
   game.discardPile.forEach(function(card) {
-    $('#discardPile').append("<div class='card " + card.color + "'>" + card.info + card.quote + "<button class='discard'>X</button></div>")
+    $('#discardPile').append("<div class='card " + card.color + "'>" + "<button class='discard'>X</button><br>" + card.info + card.quote + "</div>")
   })
 
-  $('body').on('click', '.discard', function(card) {
+  $('body').on('click', '.discard', (function(card) {
     // the index of the card in the hand that was clicked:
     var index = $(this).parent().index()
 
     // go into the current player's hand, take out the discarded card...
     var cardToDiscard = game.currentPlayer.hand[index]
     var topOfDiscardPile = game.discardPile[game.discardPile.length - 1]
-
+    // var snd = A('Magic Wand Noise-SoundBible.com-375928671.mp3');
 
     console.log(cardToDiscard.color, cardToDiscard.info)
 
-    if(cardToDiscard.color == topOfDiscardPile.color || cardToDiscard.info == topOfDiscardPile.info) {
+    if((cardToDiscard.color == topOfDiscardPile.color) || (cardToDiscard.info == topOfDiscardPile.info) || /*cardToDiscard is wild*/ || /*cardToDiscard is reverse*/ || /*cardToDiscard is skip*/ || /*cardToDiscard is draw two*/ || /*cardToDiscard is draw four*/){
+    // if(true){
       console.log("Ok to discard!")
 
       // put that discarded card into discardPile array
       game.discardPile.push(game.currentPlayer.hand.splice(index, 1)[0])
 
-
+      // snd();
 
       // -------
       // removes the card div from the DOM
 
       $('#discardPile').html($(this).parent())
+
+      if(game.currentPlayer.hand.length == 1){
+        $('#message').text("FrozUNO");
+      }
+
+      if (checkForWinner()){
+        // what to do if somebody wins
+        $('#message').text("Winner");
+      }
+      else{
+        switchTurns();
+      }
+
+
     } else {
       console.log("Womp, color or number do not match...")
-      switchTurns()
+
     }
 
 
-
-
-
-
-
-
+// if(){
+//
+// } else if(){
+//
+// }
 
     //check to make sure the move is valid
 
@@ -230,12 +244,28 @@ function populateCards() {
       // } else {
       //   switchTurns();
       // }
-  });
+  }));
 
   // player1.whoIsTheWinner();
   // player2.whoIsTheWinner();
 
 }
+
+$('#deck').on('click', function(){
+  var pluckACard = game.deck.pop();
+  game.currentPlayer.hand.push(pluckACard);
+  // var topOfDrawPile = game.discardPile[game.discardPile.length - 1]
+
+if(game.currentPlayer.name == game.player1.name){
+
+  $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>X</button></div>")
+  // shuffle(game.deck);
+  // game.deck.splice(index, 1)[0](game.currentPlayer.hand.push());
+}
+else{
+  $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>X</button></div>")
+}
+})
 
 // function checkForWinner()
 // if current player's hand is == 0
@@ -252,9 +282,8 @@ function checkForWinner(){
   };
 };
 
-$('.deck').on('click', function(){
-  game.currentPlayer.hand.append(game.deck.push(game.deck.pop()));
-})
+
+
 // function turn(){
 //   $('body').on('click', '.discard', function() {
 //       $('#discardPile').append(card);
@@ -366,7 +395,7 @@ function shuffle(array) {
   }
 
   return array;
-}
+    }
 
       // var $resetBtn = function(){
 
