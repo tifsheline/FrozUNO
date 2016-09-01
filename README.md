@@ -38,11 +38,9 @@ By creating objects in Javascript and Jquery, the game is able to generate a new
 
 1. As a player, I can control the game through simply clicking the snowflake on the cards to place them in the Discard Pile.
 
-2. As a player, I can start a new game with a single click so that I can start over without having to refresh the page.
+2. As a player, I can start a new game with a single click so that I can start over the game without having to refresh the page.
 
-3. As a player, I can choose to play against as many as 4 players per game.
-
-4. As a player, I can reset the game at any point throughout the game by clicking the Reset button.
+3. As a player, I can reset the game at any point throughout the game by clicking the Reset button.
 
 ## Future Implementations
 
@@ -51,3 +49,5 @@ By creating objects in Javascript and Jquery, the game is able to generate a new
 2. As a player, I can choose different themes from the movie which changes the cards background image and sound effects.
 
 3. As a player, I can choose other Disney themed games for learning.
+
+4. As a player, I can choose to play against as many as 8 players.
