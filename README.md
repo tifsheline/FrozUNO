@@ -19,7 +19,7 @@ Players can click the "Get a Card" button to get a new card when necessary.
 To play, check out http://tifsheline.github.io/FrozUNO.
 
 
-![frozuno screenshot](https://cloud.githubusercontent.com/assets/20602404/18069502/77c0c4ba-6dfc-11e6-9875-aa28c3bef162.png)
+![frozuno screenshot](FrozUNOGraph1.png)
 
 
 ## Development Process
