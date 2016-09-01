@@ -1,5 +1,9 @@
 //FUNCTION DECLARATIONS:
 // drawPile and discardPile should be arrays, not objects with a hand array.
+$('#instructions').click(function(){
+  $('#instLang').slideToggle();
+})
+
 var game = {
   player1: {name: "player1", hand:[]},
   player2: {name: "player2", hand:[]},
@@ -12,6 +16,10 @@ function logger(){
   console.log("Player 1 hand:", game.player1.hand);
   console.log("Player 2 hand:", game.player2.hand);
   console.log("Discard Pile:", game.discardPile);
+}
+
+function playSound() {
+  $('#wandfx').get(0).play()
 }
 
 // function hider(){
@@ -128,10 +136,14 @@ function newGame(){
     {info: 8, color: 'yellow', quote:"Some people are worth melting for."},
     {info: 9, color: 'yellow', quote:"Some people are worth melting for."},
     {info: "Draw Two", color: 'yellow', quote:"Some people are worth melting for."},
-    {info: "Draw Four", color: 'black', quote:"Some people are worth melting for."},
-    {info: "Reverse", color: 'black', quote:"Some people are worth melting for."},
-    {info: "Wild Card", color: 'black', quote:"Some people are worth melting for."},
-    {info: "Skip", color: 'black', quote:"Some people are worth melting for."}
+    {info: "Draw Four", color: 'red', quote:"Some people are worth melting for."},
+    {info: "Draw Four", color: 'green', quote:"Some people are worth melting for."},
+    {info: "Draw Four", color: 'blue', quote:"Some people are worth melting for."},
+    {info: "Draw Four", color: 'yellow', quote:"Some people are worth melting for."},
+    {info: "Wild Card", color: 'red', quote:"Some people are worth melting for."},
+    {info: "Wild Card", color: 'green', quote:"Some people are worth melting for."},
+    {info: "Wild Card", color: 'blue', quote:"Some people are worth melting for."},
+    {info: "Wild Card", color: 'yellow', quote:"Some people are worth melting for."}
   ]
 
   // game.deck.sort(function(a, b){
@@ -188,30 +200,7 @@ function populateCards() {
 
     console.log(cardToDiscard.color, cardToDiscard.info)
 
-    if((cardToDiscard.color == topOfDiscardPile.color) || (cardToDiscard.info == topOfDiscardPile.info) || (cardToDiscard.info == "Wild Card") || (cardToDiscard.info == "Reverse") || (cardToDiscard.info == "Skip")) {
-
-
-      console.log("Ok to discard!")
-
-      // put that discarded card into discardPile array
-      game.discardPile.push(game.currentPlayer.hand.splice(index, 1)[0])
-      // removes the card div from the DOM
-      $('#discardPile').html($(this).parent())
-
-      if(game.currentPlayer.hand.length == 1){
-        $('#message').text("FrozUNO");
-      }
-
-      if (checkForWinner()){
-        // what to do if somebody wins
-        $('#message').text("Winner");
-      }
-      else{
-        switchTurns();
-      }
-
-
-    } else if (cardToDiscard.info == "Draw Two"){
+     if (cardToDiscard.info == "Draw Two"){
 
       console.log("Ok to discard! 2")
       // put that discarded card into discardPile array
@@ -229,21 +218,21 @@ function populateCards() {
 
     if(game.currentPlayer.name == game.player1.name){
 
-      $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + " " + " " + " " +"</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'>" + pluckACard2.info + " " + pluckACard2.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + " " + " " + " " +"</div>");
       // shuffle(game.deck);
       // game.deck.splice(index, 1)[0](game.currentPlayer.hand.push());
     }
     else{
-      $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>")
+      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + " " + " " + " " +"</div>")
 
-      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'>" + pluckACard2.info + " " + pluckACard2.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'><<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
     }
 
     } else if (cardToDiscard.info == "Draw Four"){
 
-      console.log("Ok to discard!")
+      console.log("Ok to discard! 4")
       // put that discarded card into discardPile array
       game.discardPile.push(game.currentPlayer.hand.splice(index, 1)[0])
       // removes the card div from the DOM
@@ -263,24 +252,49 @@ function populateCards() {
 
     if(game.currentPlayer.name == game.player1.name){
 
-      $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'>" + pluckACard2.info + " " + pluckACard2.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard3.color + "'>" + pluckACard3.info + " " + pluckACard3.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard3.color + "'><button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard4.color + "'>" + pluckACard4.info + " " + pluckACard4.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player1-hand').append("<div class='card " + pluckACard4.color + "'><button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
+
     }
     else{
-      $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>")
+      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 
-      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'>" + pluckACard2.info + " " + pluckACard2.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard3.color + "'>" + pluckACard3.info + " " + pluckACard3.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player2-hand').append("<div class='card " + pluckACard3.color + "'><button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard4.color + "'>" + pluckACard4.info + " " + pluckACard4.quote + " " + " " + " " +"<button class='discard'>*</button></div>");
+      $('#player2-hand').append("<div class='card " + pluckACard4.color + "'><button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
     }
-    } else {
+    }  else if((cardToDiscard.color == topOfDiscardPile.color) || (cardToDiscard.info == topOfDiscardPile.info) || (cardToDiscard.info == "Wild Card")) {
+
+
+      console.log("Ok to discard " + cardToDiscard.color + " " + cardToDiscard.info)
+
+      // put that discarded card into discardPile array
+      game.discardPile.push(game.currentPlayer.hand.splice(index, 1)[0])
+      // removes the card div from the DOM
+      $('#discardPile').html($(this).parent())
+
+      if(game.currentPlayer.hand.length == 1){
+        $('#message').text("FrozUNO");
+      }
+
+      if (checkForWinner()){
+        // what to do if somebody wins
+        $('#message').text("Winner");
+      }
+      else{
+        switchTurns();
+      }
+        playSound();
+
+    }
+    else {
       console.log("Womp, color or number do not match...")
     }
 
@@ -322,12 +336,12 @@ $('#deck').on('click', function(){
 
 if(game.currentPlayer.name == game.player1.name){
 
-  $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>")
+  $('#player1-hand').append("<div class='card " + pluckACard.color + "'><br><button class='discard'>*</button>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
   // shuffle(game.deck);
   // game.deck.splice(index, 1)[0](game.currentPlayer.hand.push());
 }
 else{
-  $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + pluckACard.info + " " + pluckACard.quote + " " + " " + " " +"<button class='discard'>*</button></div>")
+  $('#player2-hand').append("<div class='card " + pluckACard.color + "'><br><button class='discard'>*</button>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 }
 })
 
@@ -347,6 +361,9 @@ function checkForWinner(){
 };
 
 
+$('.show-hide-hand').on('click', function() {
+  $(this).siblings('.hand').fadeToggle()
+})
 
 // function turn(){
 //   $('body').on('click', '.discard', function() {
@@ -411,8 +428,14 @@ function checkForWinner(){
 
 var $resetBtn = $('#resetBtn');
 // var $drawPile = $('.drawPile');
-
   $('#resetBtn').on('click', newGame);
+
+  var $refreshBtn = $('#refreshBtn');
+  $('#refreshBtn').on('click', function(){
+
+    location.reload();
+})
+
 
 // $('.drawPile').on('click', function(){
 //   var card = game.deck.pop();

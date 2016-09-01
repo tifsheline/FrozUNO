@@ -12,7 +12,8 @@ h1{
   font-size: 80px;
   margin-top: 113px;
   color: #FF06DA;
-  text-decoration: underline;
+  text-decoration: blink;
+  background: url('https://media.giphy.com/media/Jsdc7bQe7g3WU/giphy.gif') no-repeat center top;
 }
 h3{
   text-align: center;
@@ -125,7 +126,7 @@ p{
 }
 #player1-hand, #player2-hand{
   display: inline-block;
-  height: 300px;
+  min-height: 300px;
   min-width: 1050px;
   border: 1px dashed black;
   margin-top: 20px;
@@ -153,4 +154,16 @@ margin-bottom: 100px;
   height: 100px;
   width: 100px;
   border: 1px solid black;
+}
+#refreshBtn{
+  font-size: 30px;
+  border-radius: 50%;
+  width: 200px;
+  color: #9213FF;
+}
+#instructions{
+
+}
+#instLang{
+  display: none;
 }

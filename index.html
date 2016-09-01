@@ -13,33 +13,40 @@
 
     <h1>FrozUNO</h1>
   <nav>
-    <h2 id="instructions">Instructions</h2>
-    <p>Each player tries to match the card in the Discard Pile.  To place your card in the Discard Pile, click on the snowflake button.  You have to match by either the number, color, or the symbol/Action.  For example, if the Discard Pile has a blue card that is a 3, you have to either place a blue card or a card with the number 3 on it in the Discard Pile.  You can also play a Wild card (which can change the current color in play).  If the player has no matches or chooses not to play any of their cards even though they have a match, they must draw a card from the Draw Pile.  Each player must play one card each round.  The game continues until a player has one card left.  When a player has one card left that person has FrozUNO.  The player who is the first to have no cards left wins the game.</p>
-
+    <a href="#" id="instructions">Instructions</a>
+    <div id="instLang">
+      <p>Each player tries to match the card in the Discard Pile.  To place your card in the Discard Pile, click on the snowflake button.  You have to match by either the number, color, or the symbol/Action.  For example, if the Discard Pile has a blue card that is a 3, you have to either place a blue card or a card with the number 3 on it in the Discard Pile.  You can also play a Wild card (which can change the current color in play).  If the player has no matches or chooses not to play any of their cards even though they have a match, they must draw a card from the Draw Pile.  Each player must play one card each round.  The game continues until a player has one card left.  When a player has one card left that person has FrozUNO.  The player who is the first to have no cards left wins the game.</p>
+    </div>
   </nav>
 
   <button id="resetBtn" class="button">Let it go! Let it go! Can't hold it back anymore! <br> Start Game</button>
+
+  <button id="refreshBtn" onclick="reloadPage()">Reset <br> Game!</button>
 
   <div id="discardPile"></div>
 
   <h3 id="message"></h3>
 
-  <h3 id="p1">Player 1</h3>
+  <div class="player-container">
+    <h3 id="p1">Player 1</h3>
+    <button class="show-hide-hand">Show Or Hide Hand</button>
     <div id="statsP1" class="playerStats"></div>
-    <div id="player1-hand"></div>
+    <div id="player1-hand" style="display:none" class="hand"></div>
+  </div>
 
-  <h3 id="p2">Player 2</h3>
+  <div class="player-container">
+    <h3 id="p2">Player 2</h3>
+    <button class="show-hide-hand">Show Or Hide Hand</button>
     <div id="statsP2" class="playerStats"></div>
-    <div id="player2-hand"></div>
+    <div id="player2-hand" style="display:none" class="hand"></div>
+  </div>
 
     <button id="deck">Draw a Card!</button>
 
     <h3 id="message"></h3>
 
 
-    <!-- <audio controls>
-      <source src="Magic Wand Noise-SoundBible.com-375928671.mp3" type="audio/mp3">
-    </audio> -->
+    <audio id="wandfx" src="MagicWandNoise.mp3" type="audio/mp3"></audio>
 
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
