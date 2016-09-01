@@ -1,6 +1,8 @@
 body{
   font-family: 'Indie Flower', cursive;
-  background: url('http://images6.fanpop.com/image/photos/35500000/Elsa-elsa-the-snow-queen-35523116-460-338.gif') no-repeat center top;
+  background: url('https://cdn.tutsplus.com/psd/uploads/2014/02/snow06-04.gif') no-repeat center top;
+  background-size: cover;
+  /*background: url('http://images6.fanpop.com/image/photos/35500000/Elsa-elsa-the-snow-queen-35523116-460-338.gif') no-repeat center top;*/
 }
 h2 .instructions{
   margin-top: 30px;
@@ -8,19 +10,25 @@ h2 .instructions{
 h1{
   text-align: center;
   font-size: 80px;
-  color: white;
   margin-top: 113px;
+  color: #FF06DA;
+  text-decoration: underline;
 }
 h3{
   text-align: center;
+  color: #FF06DA;
 }
 #p1{
-  /*margin-left: 421px;*/
+  margin-left: 36px;
   text-align: center;
+  color: #FF06DA;
+  font-size: 50px;
 }
 #p2{
-  /*margin-left: 600px;*/
+  margin-left: 36px;
   text-align: center;
+  color: #FF06DA;
+  font-size: 50px;
 }
 .playerStats{
   width: 100px;
@@ -37,11 +45,12 @@ h3{
   min-height: 250px;
   border: 1px solid black;
   display: inline-block;
-  color: white;
+  color: black;
   text-align: center;
   font-size: 20px;
   border-radius: 10px;
   vertical-align: top;
+  font-weight: bold;
 }
 /*.deck{
   width: 800px;
@@ -51,11 +60,12 @@ h3{
   margin-left: 305px;
 }*/
 #discardPile{
-  width: 380px;
-  min-height: 380px;
+  width: 150px;
+  min-height: 250px;
   border: 1px solid black;
-  margin-left: 531px;
+  margin-left: 670px;
   padding-bottom: 10px;
+  margin-top: -32px;
 }
 /*#drawPile{
   width: 380px;
@@ -83,34 +93,35 @@ h3{
 }
 #instructions{
   text-align: center;
-  margin-top: 200px;
-
-}
-#rules{
-  text-align: center;
-}
-#instructions, #rules{
+  margin-top: 80px;
   font-size: 40px;
+  color: #FF06DA;
 }
 p{
-  font-size: 20px;
+  font-size: 30px;
+  color: #FF06DA;
 }
 #statsP1{
   height: 100px;
   width: 300px;
-  margin-left: 512px;
-  margin-top: 23px;
+  margin-left: 585px;
+  margin-top: 31px;
   background: url('http://img.lum.dolimg.com/v1/images/6d7454cea6644379adc7e529c5790a28078a2823.jpeg?region=0,0,450,450') no-repeat center;
 }
 #statsP2{
   height: 100px;
   width: 300px;
-  margin-left: 512px;
-  margin-top: 23px;
+  margin-left: 585px;
+  margin-top: 31px;
   background: url('http://emea.lum.dolimg.com/v1/images/b5da8e4c0046a83b81dbd945719f6b354edd764b.jpeg') no-repeat center;
 }
 #deck{
-  margin-left: -404px;
+  margin-left: 641px;
+  font-size:40px;
+  color: #9213FF;
+  border-radius: 50%;
+  width: 200px;
+  font-family: 'Indie Flower', cursive;
 }
 #player1-hand, #player2-hand{
   display: inline-block;
@@ -118,10 +129,28 @@ p{
   min-width: 1050px;
   border: 1px dashed black;
   margin-top: 20px;
+  margin-left: 180px;
 }
-/*#player2-hand{
-
-}*/
+#player2-hand{
+margin-bottom: 100px;
+}
 .discard{
   margin-top: 50px;
+  font-size: 30px;
+  color: #9213FF;
+}
+#resetBtn{
+  margin-left: 640px;
+  font-size: 30px;
+  color: #9213FF;
+  font-family: 'Indie Flower', cursive;
+  margin-top: 75px;
+  border-radius: 50%;
+  padding: 30px;
+  width: 200px;
+}
+#message{
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
 }
