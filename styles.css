@@ -21,7 +21,7 @@ h3{
   color: #FF06DA;
 }
 #p1{
-  margin-left: 175px;
+  margin-left: 410px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
@@ -29,7 +29,7 @@ h3{
   margin-top: -400px;
 }
 #p2{
-  margin-left: -65px;
+  margin-left: -40px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
@@ -114,16 +114,15 @@ p{
   margin-top: 31px;
   background: url('http://img.lum.dolimg.com/v1/images/6d7454cea6644379adc7e529c5790a28078a2823.jpeg?region=0,0,450,450') no-repeat center;
   /*display: inline-block;*/
-  margin-left: 430px;
+  margin-left: 490px;
 }
 #statsP2{
   height: 100px;
   width: 300px;
-
   margin-top: 31px;
   background: url('http://emea.lum.dolimg.com/v1/images/b5da8e4c0046a83b81dbd945719f6b354edd764b.jpeg') no-repeat center;
   display: inline-block;
-  margin-left: 430px;
+  margin-left: 490px;
 }
 #deck{
   /*margin-left: 575px;*/
@@ -174,6 +173,8 @@ margin-bottom: 100px;
   border-radius: 50%;
   width: 200px;
   color: #9213FF;
+  float: right;
+  font-family: 'Indie Flower', cursive;
 }
 #instLang{
   display: none;

@@ -1,5 +1,3 @@
-//FUNCTION DECLARATIONS:
-// drawPile and discardPile should be arrays, not objects with a hand array.
 $('#instructions').click(function(){
   $('#instLang').slideToggle();
 })
@@ -22,65 +20,6 @@ function playSound() {
   $('#wandfx').get(0).play()
 }
 
-// function hider(){
-// $('p .instructions').hide();
-//
-// $('.instructions').on('click', function(){
-//   $('p').show(2000);
-// });
-//
-// $('p .rules').hide();
-//
-// $('.rules').on('click', function(){
-//   $('p').show(2000);
-// })
-//
-// $('p .themes').hide();
-//
-// $('.themes').on('click', function(){
-//   $('p').show(2000);
-// });
-// };
-//EVENT LISTENERS:
-//Event Listener for when a player clicks the Start New Game Button
-// function startGame(){
-//
-// var newGame = [];
-//
-// newGame[0] = "card rank-2";
-// newGame[1] = "card rank-3";
-// newGame[2] = "card rank-4";
-// newGame[3] = "card rank-5";
-// newGame[4] = "card rank-6";
-// newGame[5] = "card rank-7";
-// newGame[6] = "card rank-drawTwo";
-// newGame[7] = "card rank-drawFour";
-// newGame[8] = "card rank-wildCard";
-// newGame[9] = "card rank-reverse";
-// newGame[10] = "card rank-skip";
-//
-// var output = newGame.join();
-//
-//   console.log(output);
-// }
-//
-// var startBtn = document.getElementById('startBtn');
-// if(startBtn){
-// startBtn.addEventListener('click',function(){
-//   startGame();
-// });
-// };
-//Event Listener for when a player clicks the Reset Button
-
-//Event Listener for when a player clicks the End Game Button
-
-//Event Listener for when a player clicks on a card to play it
-
-
-//FUNCTIONS:
-
-//Function to create a deck of FrozUNO cards
-
 //Function to switch turns
 function switchTurns(){
   if(game.currentPlayer == game.player1){
@@ -92,8 +31,6 @@ function switchTurns(){
     console.log("Player 1's Turn")
   }
 }
-
-//Function that places a card in the discard pile when starting a new Game
 
 function newGame(){
   game.player1.hand = [];
@@ -144,31 +81,18 @@ function newGame(){
     {info: "Wild Card", color: 'green', quote:"Some people are worth melting for."},
     {info: "Wild Card", color: 'blue', quote:"Some people are worth melting for."},
     {info: "Wild Card", color: 'yellow', quote:"Some people are worth melting for."}
-  ]
+  ];
 
-  // game.deck.sort(function(a, b){
-  //   return 0.5 - Math.random();
-  // });
   shuffle(game.deck);
 
 for (var i = 0; i < 7; i++) {
   game.player1.hand.push(game.deck.pop());
   game.player2.hand.push(game.deck.pop());
-}
+};
 
-// for (var i = 0; i < 1; i++) {
   game.discardPile.push(game.deck.pop());
-// }
-
-// for (var i = 0; i < game.deck.length; i++) {
-  // game.drawPile.push(game.deck.pop());
-// }
 
 populateCards();
-
-// $('body').on('click', '.discard', function() {
-//     $('#discardPile').append('card');
-// });
 
 };
 
@@ -181,10 +105,6 @@ function populateCards() {
     $('#player2-hand').append("<div class='card " + card.color + "'>" + "<button class='discard'>*</button><br>" + card.info + "<br>" + card.quote + "</div>")
   })
 
-  // game.drawPile.forEach(function(card) {
-  //   $('#drawPile').append("<div class='card " + card.color + "'>" + card.info + card.quote + "<button class='discard'>X</button></div>")
-  // })
-
   game.discardPile.forEach(function(card) {
     $('#discardPile').append("<div class='card " + card.color + "'>" + "<button class='discard'>*</button><br>" + card.info + "<br>" + card.quote + "</div>")
   })
@@ -196,7 +116,6 @@ function populateCards() {
     // go into the current player's hand, take out the discarded card...
     var cardToDiscard = game.currentPlayer.hand[index]
     var topOfDiscardPile = game.discardPile[game.discardPile.length - 1]
-    // var snd = A('Magic Wand Noise-SoundBible.com-375928671.mp3');
 
     console.log(cardToDiscard.color, cardToDiscard.info)
 
@@ -214,18 +133,16 @@ function populateCards() {
       var pluckACard2 = game.deck.pop();
       game.currentPlayer.hand.push(pluckACard);
       game.currentPlayer.hand.push(pluckACard2);
-      // var topOfDrawPile = game.discardPile[game.discardPile.length - 1]
 
     if(game.currentPlayer.name == game.player1.name){
 
-      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + " " + " " + " " +"</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + " " + " " + " " +"</div>");
-      // shuffle(game.deck);
-      // game.deck.splice(index, 1)[0](game.currentPlayer.hand.push());
+      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
+
     }
     else{
-      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + " " + " " + " " +"</div>")
+      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 
       $('#player2-hand').append("<div class='card " + pluckACard2.color + "'><<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
     }
@@ -248,7 +165,6 @@ function populateCards() {
       game.currentPlayer.hand.push(pluckACard2);
       game.currentPlayer.hand.push(pluckACard3);
       game.currentPlayer.hand.push(pluckACard4);
-      // var topOfDrawPile = game.discardPile[game.discardPile.length - 1]
 
     if(game.currentPlayer.name == game.player1.name){
 
@@ -297,51 +213,20 @@ function populateCards() {
     else {
       console.log("Womp, color or number do not match...")
     }
-
-
-// if(){
-//
-// } else if(){
-//
-// }
-
-    //check to make sure the move is valid
-
-
-    // empty discard pile
-    // append new card
-      // $('#discardPile').html($(this).parent());
-      // console.log($(this).parent().parent().children().length)
-
-      // console.log($(this).parent());
-      //  $(this).parent().remove();
-
-      // check for the winner
-      // if(checkForWinner()){
-      //   alert ("FROZEN!! You are the winner!");
-      // } else {
-      //   switchTurns();
-      // }
   }));
-
-  // player1.whoIsTheWinner();
-  // player2.whoIsTheWinner();
-
 }
 
 $('#deck').on('click', function(){
   var pluckACard = game.deck.pop();
   game.currentPlayer.hand.push(pluckACard);
-  // var topOfDrawPile = game.discardPile[game.discardPile.length - 1]
 
 if(game.currentPlayer.name == game.player1.name){
 
-  $('#player1-hand').append("<div class='card " + pluckACard.color + "'><br><button class='discard'>*</button>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
-  // shuffle(game.deck);
-  // game.deck.splice(index, 1)[0](game.currentPlayer.hand.push());
+  $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+
 }
 else{
-  $('#player2-hand').append("<div class='card " + pluckACard.color + "'><br><button class='discard'>*</button>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+  $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 }
 })
 
@@ -362,69 +247,8 @@ function checkForWinner(){
 
 
 $('.show-hide-hand').on('click', function() {
-  $(this).siblings('.hand').fadeToggle()
+  $(this).parent().siblings('.hand').fadeToggle()
 })
-
-// function turn(){
-//   $('body').on('click', '.discard', function() {
-//       $('#discardPile').append(card);
-//     // $(this).parent().remove()
-//   })
-// }
-
-// function populateCards(){
-//   game.player1.hand.forEach(function(card){
-//     $(".deck").append("<div class='card " + card.color + "'>" + card.info + card.quote + "</div>");
-//
-//   game.player2.hand.forEach(function(card){
-//     $(".deck").append("<div class='card " + card.color + "'>" + card.info + card.quote + "</div>");
-//
-//   game.drawPile.hand.forEach(function(card){
-//     $(".drawPile").append("<div class='card " + card.color + "'>" + card.info + card.quote + "</div>");
-//
-//   game.discardPile.hand.forEach(function(card){
-//     $(".discardPile").append("<div class='card " + card.color + "'>" + card.info + card.quote + "</div>");
-//
-//         });
-//       });
-//     });
-//   });
-// };
-
-// $(document).ready(function(){
-//   $("body").bind("touchstart", function(){
-//
-//   });
-//   $(".fan div").hover(function(){
-//     $(this).nextAll().each(function(i){
-//       $(this).addClass("after prefix_" + (i+1));
-//     });
-//    $(this).prevAll().each(function(i){
-//       $(this).addClass("before prefix_" + (i+1))
-//     });
-//   }, function(){
-// $(this).nextall().each(function(i){
-//   $(this).removeClass("after prefix_" + (i+1));
-// });
-// $(this).prevAll().each(function(i){
-//   $(this).removeClass("before prefix_" + (i+1))
-// })});
-// $(this).find(".card").addClass("flipped").mouseleave(function(){
-//   $(this).removeClass("flipped");
-// });
-//   return false;
-// });
-
-
-// var $turn = $('turn');
-// //Check if info equals discard pile or color equals discard pile
-// if(this.info == this.discardPile){
-//   $('turn').on('click', function(){
-//     $(game.player1.hand).append("<div class='card " + card.color + "'>" + card.info + card.quote + "</div>");
-//   })
-//   Winner();
-//   switchTurns();
-// }
 
 var $resetBtn = $('#resetBtn');
 // var $drawPile = $('.drawPile');
@@ -436,35 +260,6 @@ var $resetBtn = $('#resetBtn');
     location.reload();
 })
 
-
-// $('.drawPile').on('click', function(){
-//   var card = game.deck.pop();
-//   console.log(card)
-//   var cardDiv = "<div class='card " + card.color + "'>" + card.info + card.quote + "</div>"
-//   console.log(cardDiv)
-//   $('.deck').append(cardDiv);
-//   // game.deck.pop();
-// });
-
-// function Winner(player1, player2){
-//   this.player1 = player1;
-//   this.player2 = player2;
-// }
-//
-// Winner.prototype.whoIsTheWinner = function(){
-//   if(this.player1){
-//     console.log("Player 1 Wins");
-//   }
-//   else{
-//     console.log("Player 2 Wins");
-//   };
-// };
-//
-// var player1 = new Winner(true, false);
-// var player2 = new Winner(false, true);
-
-// player1.whoIsTheWinner();
-// player2.whoIsTheWinner();
 //Function that shuffles cards
 function shuffle(array) {
   var m = array.length, t, i;
@@ -483,23 +278,3 @@ function shuffle(array) {
 
   return array;
     }
-
-      // var $resetBtn = function(){
-
-        // console.log("Hello");
-      // };
-
-//Functions for game rules
-//Players must match card in the Discard pile by either number, color, or symbol/Action. If the player has no matches or chooses not to play any of their cards they must get a card from the Draw Pile.
-
-//Function that allows players to get a card from the Draw Pile
-
-//Function for simulating flip of the cards
-
-//Function that alerts FrozUNO when a player has one card left
-
-//Function that alerts there's a winner when a player has no cards left
-
-
-
-//LOOPS:
