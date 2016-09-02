@@ -229,7 +229,6 @@ function populateCards() {
     else {
       console.log("Womp, color or number do not match...")
     }
-      playErrorSound();
   }));
 }
 
