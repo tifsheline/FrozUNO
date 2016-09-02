@@ -10,26 +10,30 @@ h2 .instructions{
 h1{
   text-align: center;
   font-size: 80px;
-  margin-top: 113px;
+  margin-top: 9px;
   color: #FF06DA;
   text-decoration: blink;
   background: url('https://media.giphy.com/media/Jsdc7bQe7g3WU/giphy.gif') no-repeat center top;
+  margin-bottom: 9px;
 }
 h3{
   text-align: center;
   color: #FF06DA;
 }
 #p1{
-  margin-left: 36px;
+  margin-left: 175px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
+  margin-bottom: -20px;
+  margin-top: -400px;
 }
 #p2{
-  margin-left: 36px;
+  margin-left: -65px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
+  margin-bottom: -20px;
 }
 .playerStats{
   width: 100px;
@@ -64,9 +68,10 @@ h3{
   width: 150px;
   min-height: 250px;
   border: 1px solid black;
-  margin-left: 670px;
+  /*margin-left: 600px;*/
   padding-bottom: 10px;
-  margin-top: -32px;
+  /*margin-top: 46px;*/
+  float: right;
 }
 /*#drawPile{
   width: 380px;
@@ -105,24 +110,30 @@ p{
 #statsP1{
   height: 100px;
   width: 300px;
-  margin-left: 585px;
+  /*margin-left: 390px;*/
   margin-top: 31px;
   background: url('http://img.lum.dolimg.com/v1/images/6d7454cea6644379adc7e529c5790a28078a2823.jpeg?region=0,0,450,450') no-repeat center;
+  /*display: inline-block;*/
+  margin-left: 430px;
 }
 #statsP2{
   height: 100px;
   width: 300px;
-  margin-left: 585px;
+
   margin-top: 31px;
   background: url('http://emea.lum.dolimg.com/v1/images/b5da8e4c0046a83b81dbd945719f6b354edd764b.jpeg') no-repeat center;
+  display: inline-block;
+  margin-left: 430px;
 }
 #deck{
-  margin-left: 641px;
+  /*margin-left: 575px;*/
   font-size:40px;
   color: #9213FF;
   border-radius: 50%;
   width: 200px;
   font-family: 'Indie Flower', cursive;
+  float: right;
+  margin-top: -220px;
 }
 #player1-hand, #player2-hand{
   display: inline-block;
@@ -141,11 +152,11 @@ margin-bottom: 100px;
   color: #9213FF;
 }
 #resetBtn{
-  margin-left: 640px;
+  /*margin-left: 450px;*/
   font-size: 30px;
   color: #9213FF;
   font-family: 'Indie Flower', cursive;
-  margin-top: 75px;
+  /*margin-top: 75px;*/
   border-radius: 50%;
   padding: 30px;
   width: 200px;
@@ -154,6 +165,9 @@ margin-bottom: 100px;
   height: 100px;
   width: 100px;
   border: 1px solid black;
+  /*margin-left: 620px;*/
+  font-size: 30px;
+  float: right;
 }
 #refreshBtn{
   font-size: 30px;
@@ -161,9 +175,10 @@ margin-bottom: 100px;
   width: 200px;
   color: #9213FF;
 }
-#instructions{
-
-}
 #instLang{
   display: none;
+}
+.player-container{
+  /*display: inline-block;*/
+  margin-left: 55px;
 }
