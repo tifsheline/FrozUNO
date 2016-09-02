@@ -118,7 +118,6 @@ p{
   display: inline-block;
   min-height: 300px;
   min-width: 1050px;
-  border: 1px dashed black;
   margin-top: 20px;
   margin-left: 180px;
 }
@@ -141,11 +140,12 @@ margin-bottom: 100px;
   border: 5px solid;
 }
 #message{
-  height: 100px;
-  width: 100px;
-  /*border: 1px solid black;*/
-  margin-left: 670px;
-  font-size: 30px;
+  height: 200px;
+  width: 600px;
+  margin-left: 415px;
+  font-size: 100px;
+  text-align: center;
+  border: 1px solid black;
 }
 #refreshBtn{
   font-size: 30px;
