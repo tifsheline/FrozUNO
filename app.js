@@ -45,42 +45,42 @@ function newGame(){
     {info: 7, color: 'red', quote:"Ice is my life!"},
     {info: 8, color: 'red', quote:"Oh, look at that. I've been impaled."},
     {info: 9, color: 'red', quote:"Some people are worth melting for."},
-    {info: "Draw Two", color: 'red', quote:"Some people are worth melting for."},
-    {info: 2, color: 'green', quote:"Some people are worth melting for."},
-    {info: 3, color: 'green', quote:"Some people are worth melting for."},
+    {info: "Draw Two", color: 'red', quote:"Only an act of true love can thaw a frozen heart."},
+    {info: 2, color: 'green', quote:"Hi, everyone. I'm Olaf and I like warm hugs!"},
+    {info: 3, color: 'green', quote:"Let it go, let it go, can't hold it back anymore!"},
     {info: 4, color: 'green', quote:"Some people are worth melting for."},
-    {info: 5, color: 'green', quote:"Some people are worth melting for."},
-    {info: 6, color: 'green', quote:"Some people are worth melting for."},
-    {info: 7, color: 'green', quote:"Some people are worth melting for."},
-    {info: 8, color: 'green', quote:"Some people are worth melting for."},
+    {info: 5, color: 'green', quote:"Say it with us: Don't you dare!"},
+    {info: 6, color: 'green', quote:"Only an act of true love can thaw a frozen heart."},
+    {info: 7, color: 'green', quote:"Ice is my life!"},
+    {info: 8, color: 'green', quote:" Do you want to build a snowman?"},
     {info: 9, color: 'green', quote:"Some people are worth melting for."},
     {info: "Draw Two", color: 'green', quote:"Some people are worth melting for."},
-    {info: 2, color: 'blue', quote:"Some people are worth melting for."},
+    {info: 2, color: 'blue', quote:" Do you want to build a snowman?"},
     {info: 3, color: 'blue', quote:"Some people are worth melting for."},
-    {info: 4, color: 'blue', quote:"Some people are worth melting for."},
-    {info: 5, color: 'blue', quote:"Some people are worth melting for."},
-    {info: 6, color: 'blue', quote:"Some people are worth melting for."},
+    {info: 4, color: 'blue', quote:"Hi, everyone. I'm Olaf and I like warm hugs!"},
+    {info: 5, color: 'blue', quote:"Ice is my life!"},
+    {info: 6, color: 'blue', quote:"Only an act of true love can thaw a frozen heart."},
     {info: 7, color: 'blue', quote:"Some people are worth melting for."},
-    {info: 8, color: 'blue', quote:"Some people are worth melting for."},
+    {info: 8, color: 'blue', quote:"Let it go, let it go, can't hold it back anymore!"},
     {info: 9, color: 'blue', quote:"Some people are worth melting for."},
-    {info: "Draw Two", color: 'blue', quote:"Some people are worth melting for."},
+    {info: "Draw Two", color: 'blue', quote:"Say it with us: Don't you dare!"},
     {info: 2, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 3, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 4, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 5, color: 'yellow', quote:"Some people are worth melting for."},
+    {info: 3, color: 'yellow', quote:"Let it go, let it go, can't hold it back anymore!"},
+    {info: 4, color: 'yellow', quote:"Ice is my life!"},
+    {info: 5, color: 'yellow', quote:"Only an act of true love can thaw a frozen heart."},
     {info: 6, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 7, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 8, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: 9, color: 'yellow', quote:"Some people are worth melting for."},
-    {info: "Draw Two", color: 'yellow', quote:"Some people are worth melting for."},
-    {info: "Draw Four", color: 'red', quote:"Some people are worth melting for."},
-    {info: "Draw Four", color: 'green', quote:"Some people are worth melting for."},
-    {info: "Draw Four", color: 'blue', quote:"Some people are worth melting for."},
-    {info: "Draw Four", color: 'yellow', quote:"Some people are worth melting for."},
-    {info: "Wild Card", color: 'red', quote:"Some people are worth melting for."},
-    {info: "Wild Card", color: 'green', quote:"Some people are worth melting for."},
+    {info: 7, color: 'yellow', quote:" Do you want to build a snowman?"},
+    {info: 8, color: 'yellow', quote:"Hi, everyone. I'm Olaf and I like warm hugs!"},
+    {info: 9, color: 'yellow', quote:"Say it with us: Don't you dare!"},
+    {info: "Draw Two", color: 'yellow', quote:"Oh, look at that. I've been impaled."},
+    {info: "Draw Four", color: 'red', quote:"Only an act of true love can thaw a frozen heart."},
+    {info: "Draw Four", color: 'green', quote:"Ice is my life!"},
+    {info: "Draw Four", color: 'blue', quote:"Let it go, let it go, can't hold it back anymore!"},
+    {info: "Draw Four", color: 'yellow', quote:"Oh, look at that. I've been impaled."},
+    {info: "Wild Card", color: 'red', quote:"Say it with us: Don't you dare!"},
+    {info: "Wild Card", color: 'green', quote:"Hi, everyone. I'm Olaf and I like warm hugs!"},
     {info: "Wild Card", color: 'blue', quote:"Some people are worth melting for."},
-    {info: "Wild Card", color: 'yellow', quote:"Some people are worth melting for."}
+    {info: "Wild Card", color: 'yellow', quote:" Do you want to build a snowman?"}
   ];
 
   shuffle(game.deck);
@@ -136,18 +136,17 @@ function populateCards() {
 
     if(game.currentPlayer.name == game.player1.name){
 
-      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
-
+      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>")
     }
     else{
-      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+      $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'><<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
+      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>")
     }
 
-    } else if (cardToDiscard.info == "Draw Four"){
+  } else if (cardToDiscard.info == "Draw Four"){
 
       console.log("Ok to discard! 4")
       // put that discarded card into discardPile array
@@ -155,7 +154,8 @@ function populateCards() {
       // removes the card div from the DOM
       $('#discardPile').html($(this).parent());
 
-      switchTurns();
+        switchTurns();
+      }
 
       var pluckACard = game.deck.pop();
       var pluckACard2 = game.deck.pop();
@@ -168,25 +168,25 @@ function populateCards() {
 
     if(game.currentPlayer.name == game.player1.name){
 
-      $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard2.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard3.color + "'><button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard3.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
 
-      $('#player1-hand').append("<div class='card " + pluckACard4.color + "'><button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
+      $('#player1-hand').append("<div class='card " + pluckACard4.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
 
     }
-    else{
-      $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+    else {
+      $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'><button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
+      $('#player2-hand').append("<div class='card " + pluckACard2.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard2.info + "<br>" + pluckACard2.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard3.color + "'><button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
+      $('#player2-hand').append("<div class='card " + pluckACard3.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard3.info + "<br>" + pluckACard3.quote + "</div>");
 
-      $('#player2-hand').append("<div class='card " + pluckACard4.color + "'><button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
-    }
-    }  else if((cardToDiscard.color == topOfDiscardPile.color) || (cardToDiscard.info == topOfDiscardPile.info) || (cardToDiscard.info == "Wild Card")) {
+      $('#player2-hand').append("<div class='card " + pluckACard4.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard4.info + "<br>" + pluckACard4.quote + "</div>");
+}
+    } else if((cardToDiscard.color == topOfDiscardPile.color) || (cardToDiscard.info == topOfDiscardPile.info) || (cardToDiscard.info == "Wild Card")) {
 
 
       console.log("Ok to discard " + cardToDiscard.color + " " + cardToDiscard.info)
@@ -202,7 +202,7 @@ function populateCards() {
 
       if (checkForWinner()){
         // what to do if somebody wins
-        $('#message').text("Winner");
+        $('#message').text("FrozUNO out! You Win!");
       }
       else{
         switchTurns();
@@ -222,11 +222,11 @@ $('#deck').on('click', function(){
 
 if(game.currentPlayer.name == game.player1.name){
 
-  $('#player1-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+  $('#player1-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 
 }
 else{
-  $('#player2-hand').append("<div class='card " + pluckACard.color + "'><button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
+  $('#player2-hand').append("<div class='card " + pluckACard.color + "'>" + "<button class='discard'>*</button><br>" + pluckACard.info + "<br>" + pluckACard.quote + "</div>")
 }
 })
 
@@ -277,4 +277,4 @@ function shuffle(array) {
   }
 
   return array;
-    }
+}

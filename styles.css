@@ -2,7 +2,6 @@ body{
   font-family: 'Indie Flower', cursive;
   background: url('https://cdn.tutsplus.com/psd/uploads/2014/02/snow06-04.gif') no-repeat center top;
   background-size: cover;
-  /*background: url('http://images6.fanpop.com/image/photos/35500000/Elsa-elsa-the-snow-queen-35523116-460-338.gif') no-repeat center top;*/
 }
 h2 .instructions{
   margin-top: 30px;
@@ -21,15 +20,15 @@ h3{
   color: #FF06DA;
 }
 #p1{
-  margin-left: 410px;
+  margin-left: -62px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
   margin-bottom: -20px;
-  margin-top: -400px;
+  margin-top: -500px;
 }
 #p2{
-  margin-left: -40px;
+  margin-left: 115px;
   text-align: center;
   color: #FF06DA;
   font-size: 50px;
@@ -57,30 +56,13 @@ h3{
   vertical-align: top;
   font-weight: bold;
 }
-/*.deck{
-  width: 800px;
-  min-height: 800px;
-  border: 1px solid black;
-  display: inline-block;
-  margin-left: 305px;
-}*/
 #discardPile{
   width: 150px;
   min-height: 250px;
-  /*border: 1px solid black;*/
-  /*margin-left: 600px;*/
   padding-bottom: 10px;
-  /*margin-top: 46px;*/
   float: right;
+  margin-top: -175px;
 }
-/*#drawPile{
-  width: 380px;
-  height: 380px;
-  border: 1px solid black;
-  margin-left: 750px;
-  margin-top: -383px;
-  padding-bottom: 10px;
-}*/
 .red{
   background-color: red;
 }
@@ -110,10 +92,8 @@ p{
 #statsP1{
   height: 100px;
   width: 300px;
-  /*margin-left: 390px;*/
   margin-top: 31px;
   background: url('http://img.lum.dolimg.com/v1/images/6d7454cea6644379adc7e529c5790a28078a2823.jpeg?region=0,0,450,450') no-repeat center;
-  /*display: inline-block;*/
   margin-left: 490px;
 }
 #statsP2{
@@ -125,14 +105,14 @@ p{
   margin-left: 490px;
 }
 #deck{
-  /*margin-left: 575px;*/
-  font-size:40px;
+  font-size:30px;
   color: #9213FF;
   border-radius: 50%;
   width: 200px;
   font-family: 'Indie Flower', cursive;
-  float: right;
-  margin-top: -220px;
+  margin-top: 80px;
+  background-color: white;
+  border: 5px solid;
 }
 #player1-hand, #player2-hand{
   display: inline-block;
@@ -151,35 +131,36 @@ margin-bottom: 100px;
   color: #9213FF;
 }
 #resetBtn{
-  /*margin-left: 450px;*/
   font-size: 30px;
   color: #9213FF;
   font-family: 'Indie Flower', cursive;
-  /*margin-top: 75px;*/
   border-radius: 50%;
-  padding: 30px;
+  padding: 10px;
   width: 200px;
+  background-color: white;
+  border: 5px solid;
 }
 #message{
   height: 100px;
   width: 100px;
   /*border: 1px solid black;*/
-  /*margin-left: 620px;*/
+  margin-left: 670px;
   font-size: 30px;
-  float: right;
 }
 #refreshBtn{
   font-size: 30px;
   border-radius: 50%;
   width: 200px;
   color: #9213FF;
-  float: right;
   font-family: 'Indie Flower', cursive;
+  background-color: white;
+  border: 5px solid;
+  display: block;
+  margin-top: 80px;
 }
 #instLang{
   display: none;
 }
 .player-container{
-  /*display: inline-block;*/
   margin-left: 55px;
 }
