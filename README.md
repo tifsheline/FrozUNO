@@ -6,7 +6,7 @@ Game Setup:  FrozUNO is an interactive game for kids, ages 3 and up.  Through th
 
 Game Play:  Each player tries to match the card in the Discard Pile.  You have to match by either the number, color, or the symbol/Action.  For example, if the Discard Pile has a blue card that is an 3, you have to either place a blue card or a card with the number 3 on it in the Discard Pile.  You can also play a Wild card (which can change the current color in play).  If the player has no matches or chooses not to play any of their cards even though they have a match, they must draw a card from the Draw Pile.  The player must play one card each round.  The game continues until a player has one card left.  The moment a player has one card left the game will alert that someone has FrozUNO.  The player who is the first to have no cards left wins the game.
 
-![frozuno screenshot](FrozUNO_Game_Screenshot_3.png)
+![frozuno screenshot](FrozUNO_Game_Screen_3.png)
 
 ## Controls
 
